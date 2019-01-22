@@ -9,7 +9,7 @@ namespace ProjectEuler
         public static void Main(string[] args)
         {
             // 문제 번호
-            int number = 8;
+            int number = 10;
 
             //
             StringBuilder sb = new StringBuilder("ProjectEuler.");

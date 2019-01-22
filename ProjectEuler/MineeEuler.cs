@@ -47,6 +47,19 @@ namespace ProjectEuler
             }
         }
 
+        public List<int> SieveofEratosthenes(int limit)
+        {
+            int current = 1;
+            List<int> range = Enumerable.Range(2, limit).ToList();
+            int root = (int)Math.Sqrt(limit);
+            while (current <= root)
+            {
+                current = range.First(i => i > current);
+                range.RemoveAll(i => i != current && i % current == 0);
+            }
+            return range;
+        }
+        
         public bool IsPrime(long number)
         {
             if (number < 2)

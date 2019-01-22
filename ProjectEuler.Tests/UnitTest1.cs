@@ -14,11 +14,30 @@ namespace ProjectEuler.Tests
         }
 
         [Fact]
-        public void Test1()
+        public void GetDigitsTest()
         {
             output.WriteLine(string.Join(",",
                 new MineeEuler()
                 .GetDigits(987654321)));
+        }
+
+        [Fact]
+        public void TestP0009Way1()
+        {
+            //new P0009().Way1();
+        }
+
+        [Fact]
+        public void TestP0009Way2()
+        {
+            //new P0009().Way2();
+        }
+
+        [Fact]
+        public void SieveofEratosthenes()
+        {
+            new MineeEuler().SieveofEratosthenes(int.MaxValue / 500)
+                .Select(x => (long)x).Sum();
         }
     }
 }
