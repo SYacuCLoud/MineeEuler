@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace ProjectEuler
 {
@@ -9,7 +6,7 @@ namespace ProjectEuler
     {
         public long Answer()
         {
-            return new MineeEuler()
+            return MineeEuler.Instance
                 .SieveofEratosthenes(2_000_000)
                 .Select(x => (long)x)
                 .Sum();

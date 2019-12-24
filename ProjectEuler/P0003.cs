@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace ProjectEuler
 {
@@ -9,9 +6,9 @@ namespace ProjectEuler
     {
         public long Answer()
         {
-            long num = 600851475143;
+            const long num = 600851475143;
 
-            return new MineeEuler().Factorize(num).Max();
+            return MineeEuler.Instance.Factorize(num).Max();
         }
     }
 }

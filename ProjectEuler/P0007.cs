@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace ProjectEuler
 {
-    class P0007 : IEuler
+    public class P0007 : IEuler
     {
         public long Answer()
         {
-            return new MineeEuler()
+            return MineeEuler.Instance
                 .PrimeNumbers().Skip(10000).First();
         }
     }

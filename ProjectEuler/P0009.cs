@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 namespace ProjectEuler
 {
@@ -54,9 +53,9 @@ namespace ProjectEuler
 
         public long Answer()
         {
-            IEnumerable<int> mRange = Enumerable.Range(1, 32);
+            int[] mRange = Enumerable.Range(1, 32).ToArray();
             var triplet = mRange.SelectMany(m => mRange.Where(n => (2 * (m * m)) + (2 * (m * n)) == 1000)
-                .Select(n => new { A = m * m - n * n, B = 2 * m * n, C = m * m + n * n }))
+                .Select(n => new { A = (m * m) - (n * n), B = 2 * m * n, C = (m * m) + (n * n) }))
                 .FirstOrDefault();
             return triplet.A * triplet.B * triplet.C;
         }

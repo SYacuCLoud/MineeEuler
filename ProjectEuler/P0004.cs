@@ -3,25 +3,17 @@ using System.Linq;
 
 namespace ProjectEuler
 {
-    class P0004 : IEuler
+    public class P0004 : IEuler
     {
-        private MineeEuler m = new MineeEuler();
+        private readonly MineeEuler _m = MineeEuler.Instance;
 
         private IEnumerable<int> AssemNumbers()
         {
-            int num = 0;
-            for (int i = 100; i < 1000; i++)
-            {
-                for (int j = 100; j < 1000; j++)
-                {
-                    num = i * j;
-                    if (m.IsPalindrome(num))
-                    {
-                        yield return num;
-                    }
-                }
-            }
+            return Enumerable.Range(100, 900)
+                .SelectMany(_ => Enumerable.Range(100, 900), (i, j) => i * j)
+                .Where(num => _m.IsPalindrome(num));
         }
+
         public long Answer()
         {
             return AssemNumbers().Max();

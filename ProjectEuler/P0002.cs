@@ -41,7 +41,7 @@ namespace ProjectEuler
 
         public long Answer()
         {
-            return new MineeEuler().Fibonacci().Where(x => x % 2 ==0).TakeWhile(x => x < 4000000).Sum();
+            return MineeEuler.Instance.Fibonacci().Where(x => x % 2 == 0).TakeWhile(x => x < 4000000).Sum();
         }
     }
 }

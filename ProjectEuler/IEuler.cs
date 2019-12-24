@@ -1,6 +1,6 @@
 ﻿namespace ProjectEuler
 {
-    interface IEuler
+    internal interface IEuler
     {
         long Answer();
     }
